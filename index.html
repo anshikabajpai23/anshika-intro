@@ -4,455 +4,371 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Anshika Bajpai — Data & AI Engineer</title>
-<meta name="description" content="Why Anshika Bajpai is a strong fit for a data-focused role: GCP, BigQuery, SQL, healthcare data pipelines, and applied AI." />
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-  :root{ --navy:#071A2F; --navy2:#0F2A44; --gold:#C9A34A; --gold2:#E6C76B; }
+  :root{ --paper:#F4EFE4; --ink:#211C16; --sub:#5C5348; --rust:#A8461E; --line:rgba(33,28,22,0.14); }
   html{scroll-behavior:smooth;}
-  body{background:var(--navy); font-family:'Inter',sans-serif; color:#e5e7eb; position:relative;}
-  h1,h2,h3{font-family:'Space Grotesk',sans-serif;}
-  .grid-bg{
-    background-image:
-      linear-gradient(rgba(201,163,74,0.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(201,163,74,0.06) 1px, transparent 1px);
-    background-size:40px 40px;
-  }
-  .gold-text{background:linear-gradient(90deg,var(--gold),var(--gold2),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% auto;animation:shine 6s linear infinite;}
-  @keyframes shine{to{background-position:200% center;}}
-  .card{position:relative;background:rgba(255,255,255,0.03);backdrop-filter:blur(10px);border:1px solid rgba(201,163,74,0.18);border-radius:1.1rem;transition:.3s;isolation:isolate;}
-  .card:hover{border-color:rgba(201,163,74,0.6);transform:translateY(-4px);box-shadow:0 20px 45px -15px rgba(201,163,74,0.25);}
-  .chip{background:rgba(201,163,74,0.1);color:var(--gold2);border:1px solid rgba(201,163,74,0.25);transition:.2s;}
-  .chip:hover{background:rgba(201,163,74,0.22);transform:scale(1.06) translateY(-2px);box-shadow:0 8px 20px -8px rgba(201,163,74,0.4);}
-  .placeholder-box{border:2px dashed rgba(201,163,74,0.5);background:rgba(201,163,74,0.05);}
-  .btn-gold{background:linear-gradient(90deg,var(--gold),var(--gold2));color:#071A2F;font-weight:700;transition:.25s;box-shadow:0 8px 25px -8px rgba(201,163,74,0.5);}
-  .btn-gold:hover{filter:brightness(1.1);transform:translateY(-2px);box-shadow:0 14px 32px -8px rgba(201,163,74,0.65);}
-  .btn-outline{border:1px solid rgba(201,163,74,0.5);color:var(--gold2);transition:.25s;}
-  .btn-outline:hover{background:rgba(201,163,74,0.1);transform:translateY(-2px);}
-  .stat{font-weight:800;color:var(--gold2);}
-  .proof-tag{position:absolute;top:.6rem;left:.6rem;font-size:.65rem;font-weight:700;letter-spacing:.04em;background:rgba(7,26,47,0.85);color:var(--gold2);border:1px solid rgba(201,163,74,0.4);padding:.2rem .55rem;border-radius:999px;}
-  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1);}
+  body{background:var(--paper); font-family:'Inter',sans-serif; color:var(--ink);}
+  h1,h2,h3,.serif{font-family:'Playfair Display',serif;}
+  .eyebrow{font-family:'Space Mono',monospace; letter-spacing:.08em; color:var(--rust); font-size:.72rem; text-transform:uppercase;}
+  .rule{border-top:1px solid var(--line);}
+  .rule-b{border-bottom:1px solid var(--line);}
+  .btn-solid{background:var(--ink);color:var(--paper);font-weight:600;transition:.25s;}
+  .btn-solid:hover{background:var(--rust);}
+  .btn-line{color:var(--ink);border-bottom:1px solid var(--ink);transition:.2s;padding-bottom:2px;}
+  .btn-line:hover{color:var(--rust);border-color:var(--rust);}
+  .stat{font-weight:700;color:var(--rust);}
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease, transform .6s ease;}
   .reveal.in{opacity:1;transform:translateY(0);}
-  .quote-mark{font-size:3rem;line-height:1;color:rgba(201,163,74,0.35);font-family:Georgia,serif;}
-  /* Ambient glow blobs */
-  .blob{position:fixed;border-radius:50%;filter:blur(90px);pointer-events:none;z-index:0;opacity:.35;animation:float 14s ease-in-out infinite;}
-  .blob1{width:420px;height:420px;background:#C9A34A;top:-120px;left:-120px;}
-  .blob2{width:380px;height:380px;background:#0F2A44;top:40%;right:-140px;animation-delay:-5s;}
-  .blob3{width:320px;height:320px;background:#E6C76B;bottom:-100px;left:30%;animation-delay:-9s;opacity:.18;}
-  @keyframes float{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(30px,-30px) scale(1.08);}}
-  /* Scroll progress bar */
-  #progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold2));z-index:60;width:0%;transition:width .1s;}
-  .strength-card{position:relative;overflow:hidden;}
-  .strength-card::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 20%, rgba(201,163,74,0.12), transparent 60%);opacity:0;transition:.3s;}
-  .strength-card:hover::before{opacity:1;}
+  .filmstrip{display:flex;gap:1.5rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:1rem;}
+  .filmstrip::-webkit-scrollbar{height:6px;}
+  .filmstrip::-webkit-scrollbar-thumb{background:var(--line);}
+  .film-card{scroll-snap-align:start;flex:0 0 260px;}
+  .tl-dot{width:10px;height:10px;border-radius:50%;background:var(--rust);position:absolute;left:-5px;top:6px;}
+  .tl-line{position:absolute;left:0;top:0;bottom:0;width:1px;background:var(--line);}
+  .credits{font-family:'Space Mono',monospace;font-size:.85rem;line-height:2.4;color:var(--sub);}
 </style>
 </head>
 <body class="antialiased">
 
-<div id="progress"></div>
-<div class="blob blob1"></div>
-<div class="blob blob2"></div>
-<div class="blob blob3"></div>
-
-<!-- NAV -->
-<header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-[#071A2F]/80 border-b border-[#C9A34A]/10">
-  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-    <span class="font-bold text-lg gold-text">Anshika Bajpai</span>
-    <nav class="hidden md:flex gap-5 text-sm text-gray-300">
-      <a href="#about" class="hover:text-[#E6C76B]">About</a>
-      <a href="#strengths" class="hover:text-[#E6C76B]">Strengths</a>
-      <a href="#stack" class="hover:text-[#E6C76B]">Stack</a>
-      <a href="#experience" class="hover:text-[#E6C76B]">Experience</a>
-      <a href="#proof" class="hover:text-[#E6C76B]">Proof</a>
-      <a href="#demo" class="hover:text-[#E6C76B]">Demo</a>
-      <a href="#more" class="hover:text-[#E6C76B]">Beyond Work</a>
-      <a href="#contact" class="hover:text-[#E6C76B]">Contact</a>
+<header class="rule-b py-5">
+  <div class="max-w-5xl mx-auto px-6 flex items-center justify-between">
+    <span class="serif font-bold text-lg">Anshika Bajpai</span>
+    <nav class="hidden md:flex gap-6 eyebrow">
+      <a href="#about" class="hover:text-[var(--rust)]">About</a>
+      <a href="#strengths" class="hover:text-[var(--rust)]">Strengths</a>
+      <a href="#stack" class="hover:text-[var(--rust)]">Stack</a>
+      <a href="#experience" class="hover:text-[var(--rust)]">Experience</a>
+      <a href="#proof" class="hover:text-[var(--rust)]">Proof</a>
+      <a href="#demo" class="hover:text-[var(--rust)]">Demo</a>
+      <a href="#more" class="hover:text-[var(--rust)]">Beyond Work</a>
+      <a href="#contact" class="hover:text-[var(--rust)]">Contact</a>
     </nav>
-    <a href="images/Anshika_Bajpai_Resume.pdf" target="_blank" class="btn-gold text-xs md:text-sm px-4 py-2 rounded-full">Resume</a>
+    <a href="images/Anshika_Bajpai_Resume.pdf" target="_blank" class="btn-solid text-xs px-4 py-2">Resume</a>
   </div>
 </header>
 
-<!-- HERO -->
-<section class="relative overflow-hidden pt-36 pb-16 grid-bg">
-  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-    <div class="reveal">
-      <div class="flex flex-wrap gap-2 mb-5">
-        <span class="chip inline-block px-3 py-1 rounded-full text-xs font-semibold">✅ Available Immediately</span>
-        <span class="chip inline-block px-3 py-1 rounded-full text-xs font-semibold">🎓 F-1 OPT — Fully Work Authorized</span>
-        <span class="chip inline-block px-3 py-1 rounded-full text-xs font-semibold">📍 Open to New York</span>
-      </div>
-      <h1 class="text-4xl md:text-5xl font-black leading-tight mb-4">
-        Thanks for the chat —<br/>
-        <span class="gold-text">here's why I'm your data hire.</span>
+<section class="max-w-5xl mx-auto px-6 pt-16 pb-14">
+  <p class="eyebrow mb-4 reveal">A pitch, hand-delivered · Issue N° 01</p>
+  <div class="grid md:grid-cols-3 gap-10 items-end">
+    <div class="md:col-span-2 reveal">
+      <h1 class="text-5xl md:text-6xl font-black leading-[1.05] mb-6">
+        Thanks for the chat — here's why I'm your data hire.
       </h1>
-      <p class="text-gray-300 text-lg mb-3">Healthcare data. AI that ships. Pipelines that don't break at 2am.</p>
-      <p class="text-sm text-[#E6C76B]/80 italic">Can I start Monday? Kidding. Unless you want me to 😄 (you know why.)</p>
-      <div class="flex flex-wrap gap-4 mt-8">
-        <a href="#demo" class="btn-gold px-6 py-3 rounded-full">Watch a Live Demo</a>
-        <a href="#proof" class="btn-outline px-6 py-3 rounded-full">See the Proof</a>
+      <p class="text-lg mb-2" style="color:var(--sub)">Healthcare data. AI that ships. Pipelines that don't break at 2am.</p>
+      <p class="text-sm italic" style="color:var(--rust)">Can I start Monday? Kidding. Unless you want me to 😄 (you know why.)</p>
+      <div class="flex flex-wrap gap-2 mt-6">
+        <span class="eyebrow">✅ Available Immediately</span>
+        <span class="eyebrow">·</span>
+        <span class="eyebrow">🎓 F-1 OPT — Fully Work Authorized</span>
+        <span class="eyebrow">·</span>
+        <span class="eyebrow">📍 Open to New York</span>
+      </div>
+      <div class="flex flex-wrap gap-6 mt-8">
+        <a href="#demo" class="btn-line">Watch a Live Demo →</a>
+        <a href="#proof" class="btn-line">See the Proof →</a>
       </div>
     </div>
-    <div class="flex justify-center reveal">
-      <div class="relative">
-        <div class="absolute -inset-2 rounded-2xl bg-gradient-to-br from-[#C9A34A] to-transparent opacity-60 blur-xl"></div>
-        <img src="images/anshika.jpeg" alt="Anshika Bajpai" class="relative w-72 h-80 md:w-80 md:h-96 object-cover rounded-2xl border border-[#C9A34A]/40 shadow-2xl" />
-      </div>
+    <div class="reveal">
+      <img src="images/anshika.jpeg" alt="Anshika Bajpai" class="w-full aspect-[4/5] object-cover" style="filter:grayscale(15%) contrast(1.05);" />
+      <p class="eyebrow mt-2">Photograph — Anshika Bajpai</p>
     </div>
   </div>
 </section>
 
-<!-- ABOUT / WHY EXCITED — the only prose section -->
-<section id="about" class="py-16 border-t border-[#C9A34A]/10">
-  <div class="max-w-4xl mx-auto px-6 space-y-6">
-    <div class="card p-8 reveal">
-      <h2 class="text-sm font-bold tracking-widest text-[#E6C76B] mb-3">ABOUT THIS PAGE</h2>
-      <p class="text-gray-200 leading-relaxed">
+<section id="about" class="rule py-14">
+  <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+    <p class="eyebrow reveal">N° 02 — About this page</p>
+    <div class="md:col-span-2 space-y-6 reveal">
+      <p class="text-xl leading-relaxed serif">
         I built this the same day we talked, using AI to move fast — because I wanted to show you
         more than a resume can. Everything below is real: real metrics, real projects, real proof.
         No filler.
       </p>
-    </div>
-    <div class="card p-8 reveal">
-      <h2 class="text-sm font-bold tracking-widest text-[#E6C76B] mb-3">WHY I'M EXCITED — WHY I'M A FIT</h2>
-      <p class="text-gray-200 leading-relaxed">
+      <p class="eyebrow pt-2">Why I'm excited — why I'm a fit</p>
+      <p class="text-base leading-relaxed" style="color:var(--sub)">
         I've moved across payer-side healthcare systems, security infrastructure, and generative-AI
         research — picking up whatever data stack each environment needed along the way. That's the
         muscle ABI frameworks needs: rigorous pipelines, clean SQL, and knowing when to trust a model
         and when not to. I want to build that with you next.
       </p>
-      <p class="text-xs text-[#E6C76B]/70 italic mt-3">
+      <p class="text-xs italic" style="color:var(--rust)">
         (Swap this for your own specific "why ABI" reasons from the call before sending.)
       </p>
     </div>
   </div>
 </section>
 
-<!-- HOW I WORK / STACK -->
-<section id="stack" class="py-16 border-t border-[#C9A34A]/10 grid-bg">
-  <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-2xl md:text-3xl font-black gold-text mb-6 reveal">Do I speak your stack? Let's check. 👇</h2>
-    <div class="flex flex-wrap gap-3 reveal">
-      <span class="chip px-4 py-2 rounded-full text-sm font-medium">Python</span>
-      <span class="chip px-4 py-2 rounded-full text-sm font-medium">SQL / PostgreSQL</span>
-      <span class="chip px-4 py-2 rounded-full text-sm font-medium">Google Cloud Platform</span>
-      <span class="chip px-4 py-2 rounded-full text-sm font-medium">BigQuery</span>
-      <span class="chip px-4 py-2 rounded-full text-sm font-medium">Snowflake</span>
-      <span class="chip px-4 py-2 rounded-full text-sm font-medium">Data Pipelines &amp; ETL</span>
-      <span class="chip px-4 py-2 rounded-full text-sm font-medium">Artificial Intelligence</span>
-      <span class="chip px-4 py-2 rounded-full text-sm font-medium">Machine Learning</span>
-      <span class="chip px-4 py-2 rounded-full text-sm font-medium">Healthcare Data</span>
-      <span class="chip px-4 py-2 rounded-full text-sm font-medium">End-to-End Ownership</span>
-      <span class="chip px-4 py-2 rounded-full text-sm font-medium">Fast-Paced Delivery</span>
-      <span class="chip px-4 py-2 rounded-full text-sm font-medium">Leadership</span>
-      <span class="chip px-4 py-2 rounded-full text-sm font-medium">Detail-Oriented / Perfectionist</span>
+<section id="stack" class="rule py-14">
+  <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+    <p class="eyebrow reveal">N° 03 — Stack</p>
+    <div class="md:col-span-2 reveal">
+      <h2 class="text-3xl font-black serif mb-6">Do I speak your stack? Let's check.</h2>
+      <p class="credits">
+        Python · SQL / PostgreSQL · Google Cloud Platform · BigQuery · Snowflake · Data Pipelines &amp; ETL · Artificial Intelligence · Machine Learning · Healthcare Data · End-to-End Ownership · Fast-Paced Delivery · Leadership · Detail-Oriented / Perfectionist
+      </p>
     </div>
   </div>
 </section>
 
-<!-- STRENGTHS -->
-<section id="strengths" class="py-16 border-t border-[#C9A34A]/10">
-  <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-2xl md:text-3xl font-black gold-text mb-2 reveal">What I actually bring to the table</h2>
-    <p class="text-gray-400 mb-10 reveal">Not buzzwords — how I actually operate.</p>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-      <div class="card strength-card p-6 reveal">
-        <span class="text-3xl">🔍</span>
-        <h3 class="font-bold text-lg mt-3 mb-1">Quality &gt;&gt;&gt; everything</h3>
-        <p class="text-gray-300 text-sm">Detail-oriented, borderline perfectionist. I'd rather ship it right than ship it twice.</p>
+<section id="strengths" class="rule py-14">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="grid md:grid-cols-3 gap-8 mb-8">
+      <p class="eyebrow reveal">N° 04 — Strengths</p>
+      <div class="md:col-span-2 reveal">
+        <h2 class="text-3xl font-black serif">What I actually bring to the table</h2>
+        <p style="color:var(--sub)" class="mt-1">Not buzzwords — how I actually operate.</p>
       </div>
+    </div>
 
-      <div class="card strength-card p-6 reveal">
-        <span class="text-3xl">🎯</span>
-        <h3 class="font-bold text-lg mt-3 mb-1">The customer matters</h3>
-        <p class="text-gray-300 text-sm">Every pipeline, model, and dashboard I've built traces back to someone who actually uses it.</p>
+    <div class="divide-y" style="border-color:var(--line)">
+      <div class="grid md:grid-cols-12 gap-4 py-6 reveal">
+        <span class="md:col-span-2 serif text-3xl" style="color:var(--rust)">01</span>
+        <h3 class="md:col-span-4 font-bold text-lg">🔍 Quality &gt;&gt;&gt; everything</h3>
+        <p class="md:col-span-6 text-sm" style="color:var(--sub)">Detail-oriented, borderline perfectionist. I'd rather ship it right than ship it twice.</p>
       </div>
-
-      <div class="card strength-card p-6 reveal">
-        <span class="text-3xl">😊</span>
-        <h3 class="font-bold text-lg mt-3 mb-1">Smart, and easy to work with</h3>
-        <p class="text-gray-300 text-sm">I can go deep on the technical stuff and still be someone you'd want on your team.</p>
+      <div class="grid md:grid-cols-12 gap-4 py-6 reveal">
+        <span class="md:col-span-2 serif text-3xl" style="color:var(--rust)">02</span>
+        <h3 class="md:col-span-4 font-bold text-lg">🎯 The customer matters</h3>
+        <p class="md:col-span-6 text-sm" style="color:var(--sub)">Every pipeline, model, and dashboard I've built traces back to someone who actually uses it.</p>
       </div>
-
-      <div class="card strength-card p-6 reveal">
-        <span class="text-3xl">🗣️</span>
-        <h3 class="font-bold text-lg mt-3 mb-1">Communication</h3>
-        <p class="text-gray-300 text-sm">I can explain a model to an engineer and to a director in the same afternoon.</p>
+      <div class="grid md:grid-cols-12 gap-4 py-6 reveal">
+        <span class="md:col-span-2 serif text-3xl" style="color:var(--rust)">03</span>
+        <h3 class="md:col-span-4 font-bold text-lg">😊 Smart, easy to work with</h3>
+        <p class="md:col-span-6 text-sm" style="color:var(--sub)">I can go deep on the technical stuff and still be someone you'd want on your team.</p>
       </div>
-
-      <div class="card strength-card p-6 reveal">
-        <span class="text-3xl">🧭</span>
-        <h3 class="font-bold text-lg mt-3 mb-1">Leadership, built in</h3>
-        <p class="text-gray-300 text-sm">Not because a title said so — I've mentored, led projects, and owned outcomes since day one.</p>
+      <div class="grid md:grid-cols-12 gap-4 py-6 reveal">
+        <span class="md:col-span-2 serif text-3xl" style="color:var(--rust)">04</span>
+        <h3 class="md:col-span-4 font-bold text-lg">🗣️ Communication</h3>
+        <p class="md:col-span-6 text-sm" style="color:var(--sub)">I can explain a model to an engineer and to a director in the same afternoon.</p>
       </div>
-
-      <div class="card strength-card p-6 reveal">
-        <span class="text-3xl">📚</span>
-        <h3 class="font-bold text-lg mt-3 mb-1">Never stops learning</h3>
-        <p class="text-gray-300 text-sm">New paper, new framework, new agent pattern — I want to try it. <span class="text-[#E6C76B]/80">(Yes, I read research papers on my Kindle. In bed. It's a whole thing.)</span></p>
+      <div class="grid md:grid-cols-12 gap-4 py-6 reveal">
+        <span class="md:col-span-2 serif text-3xl" style="color:var(--rust)">05</span>
+        <h3 class="md:col-span-4 font-bold text-lg">🧭 Leadership, built in</h3>
+        <p class="md:col-span-6 text-sm" style="color:var(--sub)">Not because a title said so — I've mentored, led projects, and owned outcomes since day one.</p>
       </div>
-
+      <div class="grid md:grid-cols-12 gap-4 py-6 reveal">
+        <span class="md:col-span-2 serif text-3xl" style="color:var(--rust)">06</span>
+        <h3 class="md:col-span-4 font-bold text-lg">📚 Never stops learning</h3>
+        <p class="md:col-span-6 text-sm" style="color:var(--sub)">New paper, new framework, new agent pattern — I want to try it. <span class="italic">(Yes, I read research papers on my Kindle.)</span></p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- EXPERIENCE -->
-<section id="experience" class="py-16 border-t border-[#C9A34A]/10">
-  <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-2xl md:text-3xl font-black gold-text mb-10 reveal">Where I've actually shipped this stuff</h2>
+<section id="experience" class="rule py-14">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="grid md:grid-cols-3 gap-8 mb-10">
+      <p class="eyebrow reveal">N° 05 — Experience</p>
+      <h2 class="md:col-span-2 text-3xl font-black serif reveal">Where I've actually shipped this stuff</h2>
+    </div>
 
-    <!-- Optum -->
-    <div class="card p-8 mb-6 grid md:grid-cols-3 gap-6 reveal">
-      <div class="md:col-span-2">
-        <p class="text-xs font-semibold text-gray-400 mb-1">JUN 2021 – JUN 2024 · OPTUM, UNITEDHEALTH GROUP</p>
-        <h3 class="text-xl font-bold mb-3">Enterprise healthcare pipeline, 500 minutes → 3? Yeah, I did that. 🩺</h3>
-        <ul class="text-gray-200 text-sm space-y-2">
+    <div class="relative pl-8 space-y-14">
+      <div class="tl-line"></div>
+
+      <div class="relative reveal">
+        <span class="tl-dot"></span>
+        <p class="eyebrow mb-2">Jun 2021 – Jun 2024 · Optum, UnitedHealth Group</p>
+        <h3 class="text-2xl font-bold serif mb-3">Enterprise healthcare pipeline, 500 minutes → 3? Yeah, I did that. 🩺</h3>
+        <ul class="text-sm space-y-1.5 mb-4" style="color:var(--sub)">
           <li>🏥 Healthcare-focused, SQL-heavy data pipelines — daily</li>
           <li>⏱️ Coverage feed: <span class="stat">500+ min → &lt;3 min</span></li>
           <li>✉️ Written recognition from a Director for the work</li>
           <li>🚀 1 of 2 engineers promoted to Senior that cycle, ~3 yrs in</li>
           <li>🎯 Full ownership of the pipeline, end to end</li>
         </ul>
+        <div class="rule-b" style="border:1px dashed var(--line);padding:1rem;max-width:320px;">
+          <p class="eyebrow">Proof: Director's note — drop screenshot in images/proof-optum-recognition.jpg</p>
+        </div>
       </div>
-      <div class="relative rounded-xl overflow-hidden placeholder-box flex flex-col items-center justify-center text-center p-4 min-h-[160px]">
-        <span class="text-3xl mb-2">📩</span>
-        <p class="text-xs text-[#E6C76B] font-semibold">Proof: Director's note</p>
-        <p class="text-[11px] text-gray-400 mt-1">drop screenshot in<br/><code class="text-[#E6C76B]">images/proof-optum-recognition.jpg</code></p>
-      </div>
-    </div>
 
-    <!-- Palo Alto Networks -->
-    <div class="card p-8 mb-6 grid md:grid-cols-3 gap-6 reveal">
-      <div class="md:col-span-2">
-        <p class="text-xs font-semibold text-gray-400 mb-1">MAY 2025 – AUG 2025 · PALO ALTO NETWORKS</p>
-        <h3 class="text-xl font-bold mb-3">New model drops Tuesday — I've tried it by Wednesday. 🤖</h3>
-        <ul class="text-gray-200 text-sm space-y-2">
+      <div class="relative reveal">
+        <span class="tl-dot"></span>
+        <p class="eyebrow mb-2">May 2025 – Aug 2025 · Palo Alto Networks</p>
+        <h3 class="text-2xl font-bold serif mb-3">New model drops Tuesday — I've tried it by Wednesday. 🤖</h3>
+        <ul class="text-sm space-y-1.5 mb-4" style="color:var(--sub)">
           <li>☁️ GCP + BigQuery-backed RAG portal</li>
           <li>👥 Serving <span class="stat">10,000+</span> employees in production</li>
           <li>🧠 Always on top of the newest LLM / AI trends</li>
           <li>💬 Multi-turn LLM answers powering an internal Copilot</li>
         </ul>
+        <div style="border:1px dashed var(--line);padding:1rem;max-width:320px;">
+          <p class="eyebrow">Proof: project screenshot — drop image in images/palo-alto-project.jpg</p>
+        </div>
       </div>
-      <div class="relative rounded-xl overflow-hidden placeholder-box flex flex-col items-center justify-center text-center p-4 min-h-[160px]">
-        <span class="text-3xl mb-2">🖥️</span>
-        <p class="text-xs text-[#E6C76B] font-semibold">Proof: project screenshot</p>
-        <p class="text-[11px] text-gray-400 mt-1">drop image in<br/><code class="text-[#E6C76B]">images/palo-alto-project.jpg</code></p>
-      </div>
-    </div>
 
-    <!-- AIMed Lab -->
-    <div class="card p-8 grid md:grid-cols-3 gap-6 reveal">
-      <div class="md:col-span-2">
-        <p class="text-xs font-semibold text-gray-400 mb-1">JAN 2026 – PRESENT · AIMED LAB, INDIANA UNIVERSITY</p>
-        <h3 class="text-xl font-bold mb-3">Give me an ambiguous research problem. Watch what happens. 🧬</h3>
-        <ul class="text-gray-200 text-sm space-y-2">
+      <div class="relative reveal">
+        <span class="tl-dot"></span>
+        <p class="eyebrow mb-2">Jan 2026 – Present · AIMed Lab, Indiana University</p>
+        <h3 class="text-2xl font-bold serif mb-3">Give me an ambiguous research problem. Watch what happens. 🧬</h3>
+        <ul class="text-sm space-y-1.5 mb-4" style="color:var(--sub)">
           <li>🔬 Open-ended research → shipped, working pipeline</li>
           <li>📈 <span class="stat">37% FID improvement</span> (260 → 164)</li>
           <li>🧩 11,000+ MRI slices processed and aligned</li>
           <li>🏆 Outperformed CycleGAN — 40× lower deformation error</li>
         </ul>
-      </div>
-      <div class="relative rounded-xl overflow-hidden">
-        <span class="proof-tag">RegGAN result</span>
-        <img src="images/reggan.png" alt="RegGAN domain adaptation result" class="w-full h-full object-cover min-h-[160px]" />
+        <img src="images/reggan.png" alt="RegGAN domain adaptation result" class="max-w-xs" />
+        <p class="eyebrow mt-1">RegGAN result</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PROOF GALLERY -->
-<section id="proof" class="py-16 border-t border-[#C9A34A]/10 grid-bg">
-  <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-2xl md:text-3xl font-black gold-text mb-2 reveal">Think I only talk about healthcare data? Here's the receipts. 📊</h2>
-    <p class="text-gray-400 mb-10 reveal">Every project below has real data, real code, real results.</p>
-    <div class="grid md:grid-cols-3 gap-6">
-
-      <div class="card overflow-hidden reveal">
-        <div class="relative"><span class="proof-tag">Snowpark · SQL</span><img src="images/kidney.jpeg" class="w-full h-40 object-cover" alt="Chronic Kidney Disease pipeline"/></div>
-        <div class="p-5">
-          <h3 class="font-bold mb-2">Chronic Kidney Disease — Early Detection</h3>
-          <ul class="text-gray-300 text-xs space-y-1">
-            <li>☁️ End-to-end pipeline on Snowflake Snowpark</li>
-            <li>🧪 6 ML models compared, class imbalance handled</li>
-          </ul>
-        </div>
+<section id="proof" class="rule py-14">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="grid md:grid-cols-3 gap-8 mb-8">
+      <p class="eyebrow reveal">N° 06 — Proof</p>
+      <div class="md:col-span-2 reveal">
+        <h2 class="text-3xl font-black serif">Think I only talk about healthcare data? Here's the receipts. 📊</h2>
+        <p class="mt-1" style="color:var(--sub)">Every project below has real data, real code, real results.</p>
       </div>
-
-      <div class="card overflow-hidden reveal">
-        <div class="relative"><span class="proof-tag">U-Net · MONAI</span><img src="images/prostate.png" class="w-full h-40 object-cover" alt="Prostate MRI segmentation"/></div>
-        <div class="p-5">
-          <h3 class="font-bold mb-2">Prostate MRI Segmentation</h3>
-          <ul class="text-gray-300 text-xs space-y-1">
-            <li>📈 Dice score <span class="stat">0.415 → 0.774</span></li>
-            <li>🏥 Supports cancer-detection workflows</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="card overflow-hidden reveal">
-        <div class="relative"><span class="proof-tag">MedSAM · PyTorch</span><img src="images/medsam.png" class="w-full h-40 object-cover" alt="MedSAM meniscus segmentation"/></div>
-        <div class="p-5">
-          <h3 class="font-bold mb-2">MedSAM Fine-Tuning</h3>
-          <ul class="text-gray-300 text-xs space-y-1">
-            <li>🎯 Mean validation Dice <span class="stat">0.79</span></li>
-            <li>🩻 Foundation model adapted to a tiny clinical dataset</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="card overflow-hidden reveal md:col-span-2">
-        <div class="grid sm:grid-cols-2">
-          <div class="relative"><span class="proof-tag">K-Means · Apriori</span><img src="images/careerpath.png" class="w-full h-48 sm:h-full object-cover" alt="Career path guidance data mining tool"/></div>
-          <div class="p-5 flex flex-col justify-center">
-            <h3 class="font-bold mb-2">Career Path Guidance Tool</h3>
-            <p class="text-xs text-gray-400 mb-2">Proof I actually know data mining, not just deep learning.</p>
-            <ul class="text-gray-300 text-xs space-y-1 mb-3">
-              <li>🧮 Clustering + association rule mining on skill data</li>
-              <li>🎯 Personalized skill-gap recommender</li>
-            </ul>
-            <a href="https://github.com/anshikabajpai23/CareerPathGuidanceTool" target="_blank" class="btn-outline w-fit px-4 py-1.5 rounded-full text-xs">View Code →</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card overflow-hidden reveal">
-        <div class="relative"><span class="proof-tag">Poster · IU Speech Days</span><img src="images/poster.jpeg" class="w-full h-40 object-cover" alt="Poster presentation on ontology-driven RAG"/></div>
-        <div class="p-5">
-          <h3 class="font-bold mb-2">Can I present, too?</h3>
-          <p class="text-gray-300 text-xs">Presented "Ontology-Driven Knowledge Graphs for Medical RAG" at Midwest Speech &amp; Language Days, IU Bloomington.</p>
-        </div>
-      </div>
-
     </div>
 
-    <!-- LinkedIn recommendation -->
-    <div class="card p-8 mt-6 reveal">
-      <span class="quote-mark">"</span>
-      <p class="text-gray-200 italic -mt-4 mb-3">[Drop your product-owner's LinkedIn recommendation quote here — proof you can communicate, present, and work cross-functionally, not just write code.]</p>
-      <p class="text-xs text-[#E6C76B]">— Product Owner, LinkedIn Recommendation · <span class="text-gray-500">swap screenshot into images/linkedin-recommendation.jpg</span></p>
+    <div class="filmstrip reveal">
+      <div class="film-card">
+        <img src="images/kidney.jpeg" class="w-full h-40 object-cover" alt="Chronic Kidney Disease pipeline"/>
+        <p class="eyebrow mt-2">Snowpark · SQL</p>
+        <h3 class="font-bold serif mt-1">Chronic Kidney Disease — Early Detection</h3>
+        <p class="text-xs mt-1" style="color:var(--sub)">End-to-end pipeline on Snowflake Snowpark. 6 ML models compared, class imbalance handled.</p>
+      </div>
+      <div class="film-card">
+        <img src="images/prostate.png" class="w-full h-40 object-cover" alt="Prostate MRI segmentation"/>
+        <p class="eyebrow mt-2">U-Net · MONAI</p>
+        <h3 class="font-bold serif mt-1">Prostate MRI Segmentation</h3>
+        <p class="text-xs mt-1" style="color:var(--sub)">Dice score <span class="stat">0.415 → 0.774</span>. Supports cancer-detection workflows.</p>
+      </div>
+      <div class="film-card">
+        <img src="images/medsam.png" class="w-full h-40 object-cover" alt="MedSAM meniscus segmentation"/>
+        <p class="eyebrow mt-2">MedSAM · PyTorch</p>
+        <h3 class="font-bold serif mt-1">MedSAM Fine-Tuning</h3>
+        <p class="text-xs mt-1" style="color:var(--sub)">Mean validation Dice <span class="stat">0.79</span>. Foundation model adapted to a tiny clinical dataset.</p>
+      </div>
+      <div class="film-card">
+        <img src="images/careerpath.png" class="w-full h-40 object-cover" alt="Career path guidance data mining tool"/>
+        <p class="eyebrow mt-2">K-Means · Apriori</p>
+        <h3 class="font-bold serif mt-1">Career Path Guidance Tool</h3>
+        <p class="text-xs mt-1 mb-2" style="color:var(--sub)">Proof I actually know data mining, not just deep learning. Clustering + association rule mining on skill data.</p>
+        <a href="https://github.com/anshikabajpai23/CareerPathGuidanceTool" target="_blank" class="btn-line text-xs">View Code →</a>
+      </div>
+      <div class="film-card">
+        <img src="images/poster.jpeg" class="w-full h-40 object-cover" alt="Poster presentation on ontology-driven RAG"/>
+        <p class="eyebrow mt-2">Poster · IU Speech Days</p>
+        <h3 class="font-bold serif mt-1">Can I present, too?</h3>
+        <p class="text-xs mt-1" style="color:var(--sub)">Presented "Ontology-Driven Knowledge Graphs for Medical RAG" at Midwest Speech &amp; Language Days, IU Bloomington.</p>
+      </div>
+    </div>
+
+    <div class="text-center py-10 reveal">
+      <span class="serif text-5xl" style="color:var(--rust)">"</span>
+      <p class="serif text-xl italic max-w-2xl mx-auto -mt-4">[Drop your product-owner's LinkedIn recommendation quote here — proof you can communicate, present, and work cross-functionally, not just write code.]</p>
+      <p class="eyebrow mt-4">— Product Owner, LinkedIn Recommendation · swap screenshot into images/linkedin-recommendation.jpg</p>
     </div>
   </div>
 </section>
 
-<!-- LIVE DEMO -->
-<section id="demo" class="py-16 border-t border-[#C9A34A]/10">
-  <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-2xl md:text-3xl font-black gold-text mb-2 reveal">Built this in a weekend. You liked it. 👀</h2>
-    <p class="text-gray-400 mb-8 reveal">BandageBoard — a mini hackathon project that turned into a great conversation starter.</p>
-    <div class="card overflow-hidden md:grid md:grid-cols-2 reveal">
-      <div class="relative">
-        <iframe src="https://drive.google.com/file/d/14XTWBF03ZVL80QZGlFuTe6WJzdAsRmkf/preview" class="w-full h-72 md:h-full" allow="autoplay" title="BandageBoard live demo"></iframe>
+<section id="demo" class="rule py-14">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="grid md:grid-cols-3 gap-8 mb-8">
+      <p class="eyebrow reveal">N° 07 — Demo</p>
+      <div class="md:col-span-2 reveal">
+        <h2 class="text-3xl font-black serif">Built this in a weekend. You liked it. 👀</h2>
+        <p class="mt-1" style="color:var(--sub)">BandageBoard — a mini hackathon project that turned into a great conversation starter.</p>
       </div>
-      <div class="p-8">
-        <h3 class="text-2xl font-bold mb-2">Medicare Wound-Care Billing Triage</h3>
-        <p class="text-sm text-gray-400 mb-4">Next.js · TypeScript · PostgreSQL · Anthropic SDK</p>
-        <ul class="text-gray-200 text-sm space-y-2 mb-6">
+    </div>
+    <div class="grid md:grid-cols-2 gap-8 reveal" style="border:1px solid var(--line);padding:1.5rem;">
+      <iframe src="https://drive.google.com/file/d/14XTWBF03ZVL80QZGlFuTe6WJzdAsRmkf/preview" class="w-full h-72" allow="autoplay" title="BandageBoard live demo"></iframe>
+      <div>
+        <h3 class="text-2xl font-bold serif mb-2">Medicare Wound-Care Billing Triage</h3>
+        <p class="eyebrow mb-4">Next.js · TypeScript · PostgreSQL · Anthropic SDK</p>
+        <ul class="text-sm space-y-2 mb-6" style="color:var(--sub)">
           <li>🎯 Auto-clears ~24% of patients, zero false-positive billing risk by design</li>
           <li>🔁 Ingestion pipeline tolerant of 30% API failure rate</li>
           <li>🔒 PHI scrubbing built in, human-in-the-loop overrides</li>
           <li>🏆 3rd Place, Pulse Foundry AI Hackathon</li>
         </ul>
-        <a href="https://github.com/anshikabajpai23/bandageboard/tree/main" target="_blank" class="btn-outline px-5 py-2.5 rounded-full text-sm">View Code on GitHub →</a>
+        <a href="https://github.com/anshikabajpai23/bandageboard/tree/main" target="_blank" class="btn-line">View Code on GitHub →</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- BEYOND WORK -->
-<section id="more" class="py-16 border-t border-[#C9A34A]/10 grid-bg">
-  <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-2xl md:text-3xl font-black gold-text mb-10 reveal">All work, no play? Not quite. 🎮</h2>
-    <div class="grid md:grid-cols-3 gap-6">
-
-      <div class="card overflow-hidden reveal">
-        <img src="images/volunteer.jpg" class="w-full h-40 object-cover" alt="Volunteering, National Service Scheme"/>
-        <div class="p-5">
-          <h3 class="font-bold mb-1">Community, on purpose</h3>
-          <p class="text-gray-300 text-xs">Education &amp; Cultural Team Head, National Service Scheme</p>
-        </div>
+<section id="more" class="rule py-14">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="grid md:grid-cols-3 gap-8 mb-8">
+      <p class="eyebrow reveal">N° 08 — Beyond work</p>
+      <h2 class="md:col-span-2 text-3xl font-black serif reveal">All work, no play? Not quite. 🎮</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="reveal">
+        <img src="images/volunteer.jpg" class="w-full h-36 object-cover" alt="Volunteering, National Service Scheme"/>
+        <p class="eyebrow mt-2">Community, on purpose</p>
+        <p class="text-xs mt-1" style="color:var(--sub)">Education &amp; Cultural Team Head, National Service Scheme</p>
       </div>
-
-      <div class="card overflow-hidden reveal">
-        <div class="placeholder-box h-40 flex flex-col items-center justify-center text-center p-4">
+      <div class="reveal">
+        <div style="border:1px dashed var(--line);" class="h-36 flex flex-col items-center justify-center text-center p-4">
           <span class="text-2xl mb-1">🏆</span>
-          <p class="text-[11px] text-gray-400">drop photo in<br/><code class="text-[#E6C76B]">images/hackathon-photo.jpg</code></p>
+          <p class="text-[11px]" style="color:var(--sub)">drop photo in images/hackathon-photo.jpg</p>
         </div>
-        <div class="p-5">
-          <h3 class="font-bold mb-1">Hackathon winner, more than once</h3>
-          <p class="text-gray-300 text-xs">Cardiovascular disease prediction @ Optum + 3rd place @ Pulse Foundry</p>
-        </div>
+        <p class="eyebrow mt-2">Hackathon winner, more than once</p>
+        <p class="text-xs mt-1" style="color:var(--sub)">Cardiovascular disease prediction @ Optum + 3rd place @ Pulse Foundry</p>
       </div>
-
-      <div class="card overflow-hidden reveal">
-        <div class="placeholder-box h-40 flex flex-col items-center justify-center text-center p-4">
+      <div class="reveal">
+        <div style="border:1px dashed var(--line);" class="h-36 flex flex-col items-center justify-center text-center p-4">
           <span class="text-2xl mb-1">🎲</span>
-          <p class="text-[11px] text-gray-400">drop photo in<br/><code class="text-[#E6C76B]">images/hobby.jpg</code></p>
+          <p class="text-[11px]" style="color:var(--sub)">drop photo in images/hobby.jpg</p>
         </div>
-        <div class="p-5">
-          <h3 class="font-bold mb-1">Yes, I have hobbies</h3>
-          <p class="text-gray-300 text-xs">Board games, the outdoors, and books that keep me up too late</p>
-        </div>
+        <p class="eyebrow mt-2">Yes, I have hobbies</p>
+        <p class="text-xs mt-1" style="color:var(--sub)">Board games, the outdoors, and books that keep me up too late</p>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- EDUCATION -->
-<section class="py-16 border-t border-[#C9A34A]/10">
-  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
-    <div class="reveal">
-      <h2 class="text-2xl md:text-3xl font-black gold-text mb-6">Education</h2>
-      <div class="card p-6 mb-4">
-        <h3 class="font-bold">M.S. Data Science — Indiana University Bloomington</h3>
-        <p class="text-gray-400 text-sm mb-1">Aug 2024 – May 2026 · GPA <span class="stat">3.94</span></p>
+<section class="rule py-14">
+  <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+    <p class="eyebrow reveal">N° 09 — Education</p>
+    <div class="md:col-span-2 reveal divide-y" style="border-color:var(--line)">
+      <div class="py-4">
+        <h3 class="font-bold serif text-lg">M.S. Data Science — Indiana University Bloomington</h3>
+        <p class="eyebrow mt-1">Aug 2024 – May 2026 · GPA 3.94</p>
       </div>
-      <div class="card p-6">
-        <h3 class="font-bold">B.Tech Computer Science — Jaypee Institute of Information Technology</h3>
-        <p class="text-gray-400 text-sm">Jul 2017 – May 2021</p>
+      <div class="py-4">
+        <h3 class="font-bold serif text-lg">B.Tech Computer Science — Jaypee Institute of Information Technology</h3>
+        <p class="eyebrow mt-1">Jul 2017 – May 2021</p>
       </div>
-    </div>
-    <div class="placeholder-box rounded-2xl p-10 text-center reveal flex flex-col items-center justify-center min-h-[220px]">
-      <span class="text-3xl mb-2">🎓</span>
-      <p class="text-[#E6C76B] font-semibold mb-1">Graduation photo</p>
-      <p class="text-gray-400 text-xs">Graduated. Available immediately.<br/>Drop photo in <code class="text-[#E6C76B]">images/graduation.jpg</code></p>
+      <div class="py-4" style="border:1px dashed var(--line);padding:1rem;">
+        <p class="eyebrow">🎓 Graduation photo — graduated, available immediately. Drop photo in images/graduation.jpg</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="py-16 border-t border-[#C9A34A]/10 grid-bg">
-  <div class="max-w-4xl mx-auto px-6 text-center reveal">
-    <h2 class="text-2xl md:text-3xl font-black gold-text mb-4">Let's keep the conversation going</h2>
-    <p class="text-gray-300 mb-8">Thanks again for your time — happy to dive deeper into any of this.</p>
-    <div class="flex flex-wrap justify-center gap-4">
-      <a href="mailto:anshikabajpai23@gmail.com" class="btn-gold px-6 py-3 rounded-full">Email Me</a>
-      <a href="https://www.linkedin.com/in/anshikabajpai23/" target="_blank" class="btn-outline px-6 py-3 rounded-full">LinkedIn</a>
-      <a href="https://github.com/anshikabajpai23" target="_blank" class="btn-outline px-6 py-3 rounded-full">GitHub</a>
-      <a href="images/Anshika_Bajpai_Resume.pdf" target="_blank" class="btn-outline px-6 py-3 rounded-full">Resume (PDF)</a>
+<section id="contact" class="py-16 text-center">
+  <div class="max-w-2xl mx-auto px-6 reveal">
+    <h2 class="text-3xl font-black serif mb-4">Let's keep the conversation going</h2>
+    <p class="mb-8" style="color:var(--sub)">Thanks again for your time — happy to dive deeper into any of this.</p>
+    <div class="flex flex-wrap justify-center gap-6">
+      <a href="mailto:anshikabajpai23@gmail.com" class="btn-solid px-6 py-3">Email Me</a>
+      <a href="https://www.linkedin.com/in/anshikabajpai23/" target="_blank" class="btn-line">LinkedIn</a>
+      <a href="https://github.com/anshikabajpai23" target="_blank" class="btn-line">GitHub</a>
+      <a href="images/Anshika_Bajpai_Resume.pdf" target="_blank" class="btn-line">Resume (PDF)</a>
     </div>
   </div>
 </section>
 
-<footer class="py-8 text-center text-gray-500 text-xs border-t border-[#C9A34A]/10">
+<footer class="rule py-6 text-center eyebrow">
   Built by Anshika Bajpai
 </footer>
 
 <script>
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.12 });
+  }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach((el, i) => {
-    el.style.transitionDelay = (i % 4) * 60 + 'ms';
+    el.style.transitionDelay = (i % 4) * 50 + 'ms';
     io.observe(el);
-  });
-
-  const bar = document.getElementById('progress');
-  window.addEventListener('scroll', () => {
-    const h = document.documentElement;
-    const pct = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
-    bar.style.width = pct + '%';
   });
 </script>
 
